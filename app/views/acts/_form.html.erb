@@ -1,0 +1,27 @@
+<%= form_with(model: act, local: true) do |form| %>
+  <% if act.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(act.errors.count, "error") %> prohibited this act from being saved:</h2>
+
+      <ul>
+      <% act.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
