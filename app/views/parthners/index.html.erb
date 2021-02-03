@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Parthners</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parthners.each do |parthner| %>
+      <tr>
+        <td><%= parthner.name %></td>
+        <td><%= link_to 'Show', parthner %></td>
+        <td><%= link_to 'Edit', edit_parthner_path(parthner) %></td>
+        <td><%= link_to 'Destroy', parthner, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parthner', new_parthner_path %>

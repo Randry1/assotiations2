@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :parthners
   resources :acts
   resources :subscriptions
   resources :users
