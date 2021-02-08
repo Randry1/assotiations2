@@ -4,7 +4,7 @@ class CreateParts < ActiveRecord::Migration[5.2]
       t.string :name
       t.timestamps
     end
-    create_join_table :assemblies, :parts do |t|
+    create_join_table :acts, :parts do |t|
       t.index :acts_id
       t.index :parts_id
     end
