@@ -1,3 +1,3 @@
 class Parthner < ApplicationRecord
-  has_many: :parthners
+  has_many :parthners
 end

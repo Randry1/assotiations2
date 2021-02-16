@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_185028) do
+ActiveRecord::Schema.define(version: 2021_02_16_155603) do
 
   create_table "acts", force: :cascade do |t|
     t.integer "number"
@@ -67,6 +67,12 @@ ActiveRecord::Schema.define(version: 2021_02_04_185028) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "homes", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "paints", force: :cascade do |t|
     t.string "color"
     t.datetime "created_at", null: false
@@ -82,6 +88,22 @@ ActiveRecord::Schema.define(version: 2021_02_04_185028) do
   end
 
   create_table "parts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plates", force: :cascade do |t|
+    t.string "name"
+    t.integer "homes_id"
+    t.integer "streets_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["homes_id"], name: "index_plates_on_homes_id"
+    t.index ["streets_id"], name: "index_plates_on_streets_id"
+  end
+
+  create_table "streets", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
